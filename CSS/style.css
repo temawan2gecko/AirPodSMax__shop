@@ -29,6 +29,14 @@ button {
   position: relative;
 }
 
+.content-item {
+  display: none;
+}
+
+.content-item.content-item__active {
+  display: inline-block;
+}
+
 .header__top {
   display: flex;
   justify-content: space-between;
@@ -59,7 +67,7 @@ button {
   padding-bottom: 50px;
 }
 .header__content__images::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -67,6 +75,22 @@ button {
   bottom: 0;
   z-index: -2;
   width: 100%;
+  background: linear-gradient(180deg, #cadbeb 0%, rgba(235, 235, 235, 0) 100%);
+}
+
+.header__content__images:has(.color--black.content-item__active)::before {
+  background: linear-gradient(180deg, #b6b6b6 0%, rgba(235, 235, 235, 0) 100%);
+}
+.header__content__images:has(.color--green.content-item__active)::before {
+  background: linear-gradient(180deg, #ddead9 0%, rgba(235, 235, 235, 0) 100%);
+}
+.header__content__images:has(.color--white.content-item__active)::before {
+  background: linear-gradient(180deg, #fafafa 0%, rgba(235, 235, 235, 0) 100%);
+}
+.header__content__images:has(.color--red.content-item__active)::before {
+  background: linear-gradient(180deg, #f3d6d1 0%, rgba(235, 235, 235, 0) 100%);
+}
+.header__content__images:has(.color--blue.content-item__active)::before {
   background: linear-gradient(180deg, #cadbeb 0%, rgba(235, 235, 235, 0) 100%);
 }
 .header__content__title {
@@ -85,13 +109,13 @@ button {
 }
 .title--m {
   display: inline-block;
-  transform: translate(-50px,267px);
+  transform: translate(-50px, 267px);
 }
-.title--ax{
+.title--ax {
   position: relative;
   display: inline-block;
   z-index: -1;
-  transform: translate(-125px,387px);
+  transform: translate(-125px, 387px);
 }
 
 .choose__color {
@@ -117,6 +141,10 @@ button {
   border-radius: 20px;
   border: 1px solid #777;
   padding: 50px 55px;
+}
+
+.choose__color__btn.choose__color__btn__active {
+  display: none;
 }
 
 .main__title {
@@ -176,17 +204,14 @@ button {
   margin: 0 auto;
 }
 
-
-
 .audio {
- background-image: url(../images/menchik.jpg);
- background-position: bottom center;
- background-repeat: no-repeat;
- background-size: cover;
- height: 220vh;
- padding-bottom: 20px;
+  background-image: url(../images/menchik.jpg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 220vh;
+  padding-bottom: 20px;
 }
-
 
 .audio__inner {
   min-height: 200vh;
@@ -234,7 +259,6 @@ button {
   padding: 20px 0;
 }
 
-
 .footer__nav {
   margin-top: 80px;
 }
@@ -246,20 +270,19 @@ button {
   gap: 20px;
 }
 
-
-@media (max-width:1469px) {
+@media (max-width: 1469px) {
   .header__content__images {
     max-width: 100%;
   }
   .header__content__title {
     font-size: 180px;
-    transform: translate(130px,30px);
+    transform: translate(130px, 30px);
   }
   .choose__color__list {
     flex-wrap: wrap;
   }
 }
-@media (max-width:1349px) {
+@media (max-width: 1349px) {
   .header__content__title {
     transform: none;
     font-size: 140px;
@@ -287,13 +310,16 @@ button {
   }
 }
 
-@media (max-width:890px) {
+@media (max-width: 890px) {
   .header__content__title {
     font-size: 120px;
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
+  .header {
+    min-height: 50vh;
+  }
   .header__content__title {
     font-size: 100px;
   }
@@ -324,29 +350,26 @@ button {
   }
 }
 
-@media (max-width:680px) {
+@media (max-width: 680px) {
   .header__content__title {
     font-size: 90px;
     padding-top: 200px;
   }
 }
 
-@media (max-width:629px) {
+@media (max-width: 629px) {
   .header__content__title {
     font-size: 85px;
   }
 }
-@media (max-width:590px) {
+@media (max-width: 590px) {
   .header__content__title {
     font-size: 80px;
     padding-top: 180px;
   }
 }
 
-@media (max-width:560px) {
-  .header {
-    max-height: 100%;
-  }
+@media (max-width: 560px) {
   .choose__color__text {
     margin-bottom: 40px;
     padding-bottom: 0;
@@ -373,7 +396,7 @@ button {
   }
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .header__content__title {
     font-size: 70px;
     padding-top: 150px;
@@ -389,19 +412,18 @@ button {
   }
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   .header__content__title {
     font-size: 60px;
   }
 }
 
-
-@media (max-width:420px) {
+@media (max-width: 420px) {
   .header__content__title {
     padding-top: 120px;
   }
 }
-@media (max-width:414px) {
+@media (max-width: 414px) {
   .main__title,
   .choose__color__title {
     font-size: 24px;
@@ -417,12 +439,8 @@ button {
   }
 }
 
-@media (max-width:380px) {
+@media (max-width: 380px) {
   .header__content__title {
     font-size: 50px;
   }
 }
-
-
-
-
