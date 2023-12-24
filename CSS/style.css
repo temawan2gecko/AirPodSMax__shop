@@ -319,6 +319,9 @@ button {
   .choose__color__list {
     gap: 16px;
   }
+  .header {
+    max-width: 100%;
+  }
 }
 
 @media (max-width:680px) {
@@ -342,7 +345,7 @@ button {
 
 @media (max-width:560px) {
   .header {
-    max-height: 80vh;
+    max-height: 100%;
   }
   .choose__color__text {
     margin-bottom: 40px;
